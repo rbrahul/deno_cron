@@ -46,6 +46,8 @@ Here is the CRON style syntax to write tons of custom cron schedule.
 └───────────────────────── second (0 - 59) - [Optional 01 as default]
 ```
 
+### Syntax Table:
+
 | Field        | Required           | Allowed Values  | Allowed Special Character |
 | ------------- |:-------------:|:-----:|:----------------------:|:------------------:|
 | Seconds      | No | 0-59 | `/` `-` `,` `*`|
