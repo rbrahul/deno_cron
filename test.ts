@@ -1,4 +1,4 @@
-import { validate } from './cron.ts';
+import { validate } from 'https://deno.land/x/deno_cron/cron.ts';
 
 const assert = (value1: any, value2: any) => {
     if (value1 !== value2) {
