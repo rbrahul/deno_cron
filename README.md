@@ -73,11 +73,11 @@ cron('1 */30 3,6,9 1-7 */1 1', () => {
 
 ```
 
-## APIs:
+## API:
 
-| Function                    |                                Arguments        |
+| Function                    |                                Parameter        |
 | ---------------------------- |:--------------------------------------------|
-| `cron(schedule, job)`      |  **schedule: string** `required` - cron syntax, **job: func**  `required` function to be executed|
+| `cron(schedule, job)`      |  **schedule: string** `required` - cron syntax, **job: func**  `required` - function to be executed|
 | `everyMinute(job)`      |  **job: func** `required` - function to be executed |
 | `every10Minute(job)`      |  **job: func** `required` - function to be executed |
 | `hourly(job)`      |  **job: func** `required` - function to be executed |
@@ -88,3 +88,11 @@ cron('1 */30 3,6,9 1-7 */1 1', () => {
 | `yearly(job)`      |  **job: func** **required** - function to be executed |
 
 
+## Change Log:
+* Initial version released on - 23-05-2020
+
+## Contributors:
+
+[Rahul Baruri](https://www.linkedin.com/in/rahul-baruri-23312311a/)
+
+**Developed with ❤️ for Deno community**
