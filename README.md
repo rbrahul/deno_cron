@@ -2,6 +2,7 @@
 
 A smart cron Job scheduler library for Deno. It allows you to write human readable cron syntax with tons of flexibility. Writing cron syntax and operation can be very tadious for many developers. This extensions provides very developer friendly api to write any job scheduler's cron syntax you need.
 
+![Deno Cron](https://img.favpng.com/17/13/23/timer-stopwatch-software-clock-icon-png-favpng-xwrnzULsR1z7fgpS33hc6346n.jpg)
 
 
 ## Installation:
