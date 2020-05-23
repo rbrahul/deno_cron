@@ -64,8 +64,14 @@ Here is the CRON style syntax to write tons of custom cron schedule.
 cron('1 0 0 1 */1 *', () => {
     sendMails();
 });
+
+// Job will be executed for 1st to 7th day of every month on 3rd, 6th and 9th hour and every 30 minutes if it's monday
+
+cron('1 */30 3,6,9 1-7 */1 1', () => {
+    sendMails();
+});
+
 ```
 
 ## APIs:
-
 
