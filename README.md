@@ -38,7 +38,7 @@ Here is the CRON style syntax to write tons of custom cron schedule.
 *    *    *    *    *    *
 ┬    ┬    ┬    ┬    ┬    ┬
 │    │    │    │    │    │
-│    │    │    │    │    └ day of week (0 - 7) (0 or 7 is Sun)
+│    │    │    │    │    └ day of week (0 - 7) (0 or 7 is Sunday)
 │    │    │    │    └───── month (1 - 12)
 │    │    │    └────────── day of month (1 - 31)
 │    │    └─────────────── hour (0 - 23)
