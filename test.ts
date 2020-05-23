@@ -31,7 +31,7 @@ test(
 
 test(
     "Should execute on 4th February Thursday at 10 O'clock, 7th minute and 6th second with comma separated minute 1,3,7 and */5 occurance",
-)('1,3,7 */5 04 1-4 0,4', new Date('2021-02-04 10:07:06'));
+)('6 1,3,7 */5 04 1-4 0,4', new Date('2021-02-04 10:07:06'));
 
 test('Should execute on every week at monday mid night')(
     '1 0 0 * * 1',
@@ -76,4 +76,9 @@ test('Should execute every minute at 1st second')(
 test('Should execute every 15 minute at 1st second')(
     '1 */15 * * * *',
     new Date('2021-01-27 03:45:01'),
+);
+
+test('Should execute yearly 1st of January at mid-night')(
+    '1 0 0 1 1 *',
+    new Date('2021-01-01 00:00:01'),
 );

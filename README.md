@@ -75,3 +75,16 @@ cron('1 */30 3,6,9 1-7 */1 1', () => {
 
 ## APIs:
 
+| Function        |    Arguments        |
+| ------------- |:-------------|
+| `cron(schedule, job)`      |  **schedule: string** `required` - cron syntax, **job: func**  `required` function to be executed|
+| `everyMinute(job)`      |  **job: func** `required` - function to be executed |
+| `every10Minute(job)`      |  **job: func** `required` - function to be executed |
+| `hourly(job)`      |  **job: func** `required` - function to be executed |
+| `daily(job)`      |  **job: func** `required` - function to be executed |
+| `weekly(job, weekDay?)`      |  **job: func** `required` - function to be executed,  **weekDay:** `string` or `number` **optional** - Represents weekday; 0-6, (0 represents Sunday) `default:` **1** |
+| `biweekly(job)`      |  **job: func** `required` - function to be executed |
+| `monthly(job, dayOfMonth)`      |  **job: func** `required` - function to be executed **dayOfMonth:** `string` or `number` **optional** -  1-31, `default:` **1** |
+| `yearly(job)`      |  **job: func** `required` - function to be executed |
+
+

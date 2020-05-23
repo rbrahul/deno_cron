@@ -152,7 +152,7 @@ export const monthly = (cb: JobType, dayOfMonth: string | number = 1) => {
 };
 
 export const yearly = (cb: JobType) => {
-    cron(`1 0 0 * 1 *`, cb);
+    cron(`1 0 0 1 1 *`, cb);
 };
 
 export const start = () => {
