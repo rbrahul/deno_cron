@@ -47,7 +47,7 @@ Here is the CRON style syntax to write tons of custom cron schedule.
 ```
 
 | Field        | Required           | Allowed Values  | Allowed Special Character |
-| ------------- |:-------------:| -----:|----------------------:|------------------:|
+| ------------- |:-------------:|:-----:|:----------------------:|:------------------:|
 | Seconds      | No | 0-59 | `/` `-` `,` `*`|
 | Minute      | Yes      |   0-59 |`/` `-` `,` `*`|
 | Hour | Yes     |    0-23 |`/` `-` `,` `*`|
