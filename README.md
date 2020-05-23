@@ -49,13 +49,8 @@ Here is the CRON style syntax to write tons of custom cron schedule.
 ### Syntax Table:
 
 | Field        | Required           | Allowed Values  | Allowed Special Character |
-| ------------- |:-------------:|:-----:|:----------------------:|------------------:|
+| ------------- |:-------------:|:-----:|:----------------------:|:------------------:|
 | Seconds      | No | 0-59 | `/` `-` `,` `*` |
-| Minute      | Yes      |   0-59 | `/` `-` `,` `*` |
-| Hour | Yes     |    0-23 | `/` `-` `,` `*` |
-| Day of Month | Yes     |    1-31 | `/` `-` `,` `*` |
-| Month | Yes     |    1-12 | `/` `-` `,` `*` |
-| Day of Week | Yes     |    0-6 (0 is Sunday) | `/` `-` `,` `*` |
 
 #### Example:
 
