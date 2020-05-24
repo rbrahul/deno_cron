@@ -97,7 +97,7 @@ cron('1 */30 3,6,9 1-7 */1 1', () => {
 [Rahul Baruri](https://www.linkedin.com/in/rahul-baruri-23312311a/)
 
 ## License
-Distributed under the [MIT License](https://github.com/siokas/denomander/blob/master/LICENSE).
+Distributed under the [MIT License](https://github.com/rbrahul/deno_cron/blob/master/LICENSE.md).
 
 [https://github.com/rbrahul/deno_cron/blob/master/README.md](https://github.com/rbrahul/deno_cron/blob/master/README.md)
 
