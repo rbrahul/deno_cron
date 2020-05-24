@@ -80,7 +80,7 @@ cron('1 */30 3,6,9 1-7 */1 1', () => {
 | ---------------------------- |:--------------------------------------------|
 | `cron(schedule, job)`      |  **schedule: string** `required` - cron syntax, **job: func**  `required` - function to be executed|
 | `everyMinute(job)`      |  **job: func** `required` - function to be executed |
-| `every10Minute(job)`      |  **job: func** `required` - function to be executed |
+| `every15Minute(job)`      |  **job: func** `required` - function to be executed |
 | `hourly(job)`      |  **job: func** `required` - function to be executed |
 | `daily(job)`      |  **job: func** `required` - function to be executed |
 | `weekly(job, weekDay?)`      |  **job: func** `required` - function to be executed,  **weekDay: string** or **number** **{optional}** - Represents weekday; 0-6, (0 represents Sunday) `default:` **1** |
