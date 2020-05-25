@@ -96,9 +96,7 @@ export const validate = (schedule: string, date: Date = new Date()) => {
         );
     }
 
-    const didMatch = Object.values(timeObj).every(
-        (assertion: boolean) => assertion === true,
-    );
+    const didMatch = Object.values(timeObj).every(Boolean);
     return {
         didMatch,
         entries: timeObj,
@@ -118,6 +116,7 @@ const runScheduler = () => {
     schedulerTimeIntervalID = setInterval(() => {
         if (shouldStopRunningScheduler) {
             clearInterval(schedulerTimeIntervalID);
+            return;
         }
         executeJobs();
     }, 1000);

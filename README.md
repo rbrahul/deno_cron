@@ -87,6 +87,8 @@ cron('1 */30 3,6,9 1-7 */1 1', () => {
 | `biweekly(job)`      |  **job: func** `required` - function to be executed |
 | `monthly(job, dayOfMonth)`      |  **job: func** `required` - function to be executed, **dayOfMonth: string** or **number** **{optional}** -  1-31, `default:` **1** |
 | `yearly(job)`      |  **job: func** **required** - function to be executed |
+| `stop()`      |   - Stop all the scheduled job |
+| `start()`      |  - If schedulers have been stopped before then starts again |
 
 
 ## Change Log:
