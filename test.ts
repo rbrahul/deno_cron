@@ -15,9 +15,10 @@ const assert = (value1: any, value2: any) => {
 
 const test = (() => {
     let counter = 0;
-    return (description: string) => (params: string, date: Date) => {
+    return (description: string) => (params: string, date: Date, timeZone?: string) => {
         console.log(`${++counter} - ${description}`);
-        assert(validate(params, date).didMatch, true);
+        const comparableDate = timeZone ? new Date(date.toLocaleString('en-US', {timeZone})) : date;
+        assert(validate(params, comparableDate).didMatch, true);
     };
 })();
 
@@ -82,3 +83,11 @@ test('Should execute yearly 1st of January at mid-night')(
     '1 0 0 1 1 *',
     new Date('2021-01-01 00:00:01'),
 );
+
+test('Should execute based on timezone')(
+    '23 18 5 4 6 3',
+    new Date('2020-06-03: 23:18:23'),
+    "Asia/Shanghai"
+);
+
+console.log('IS TIME ZONE APPLIED TO DENO',new Date('2020-06-03: 23:18:23'), new Date(new Date('2020-06-03: 23:18:23').toLocaleString('en-US', {timeZone: "Asia/Shanghai"})));

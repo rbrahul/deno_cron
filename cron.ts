@@ -1,5 +1,15 @@
 type JobType = () => void;
 
+type ScheduleItemType = {
+    schedule: string,
+    job: JobType,
+    timeZone?: string | undefined
+}
+
+type Options = {
+    timeZone?: string;
+}
+
 enum TIME_PART {
     SECOND = 'SECOND',
     MINUTE = 'MINUTE',
@@ -9,16 +19,19 @@ enum TIME_PART {
     MONTH = 'MONTH',
 }
 
-const schedules = new Map<string, Array<JobType>>();
+let schedules: Array<ScheduleItemType> = [];
 
 let schedulerTimeIntervalID: ReturnType<typeof setInterval> = 0;
 let shouldStopRunningScheduler = false;
 
-export const cron = (schedule: string = '', job: JobType) => {
-    let jobs = schedules.has(schedule)
-        ? [...(schedules.get(schedule) || []), job]
-        : [job];
-    schedules.set(schedule, jobs);
+export const cron = (schedule: string = '', job: JobType, options?: Options) => {
+    const timeZone = options?.timeZone;
+    const jobItem: ScheduleItemType = {
+        schedule,
+        job,
+        timeZone
+    };
+    schedules = [...schedules, jobItem];
 };
 
 const isRange = (text: string) => /^\d\d?\-\d\d?$/.test(text);
@@ -95,7 +108,6 @@ export const validate = (schedule: string, date: Date = new Date()) => {
             key as TIME_PART,
         );
     }
-
     const didMatch = Object.values(timeObj).every(Boolean);
     return {
         didMatch,
@@ -105,9 +117,10 @@ export const validate = (schedule: string, date: Date = new Date()) => {
 
 const executeJobs = () => {
     const date = new Date();
-    schedules.forEach((jobs, schedule) => {
-        if (validate(schedule, date).didMatch) {
-            jobs.forEach((job) => job());
+    schedules.forEach(({schedule, job, timeZone}) => {
+        const comparableDate = timeZone ? new Date(date.toLocaleString('en-US', { timeZone })) : date;
+        if (validate(schedule, comparableDate).didMatch) {
+            job();
         }
     });
 };
